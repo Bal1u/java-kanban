@@ -1,9 +1,11 @@
+package Classes;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Epic extends Task {
 
-    public final ArrayList<Integer> subTasks = new ArrayList<>();
+    private final ArrayList<Integer> subTasks = new ArrayList<>();
 
 
     public Epic(String name, String description) {

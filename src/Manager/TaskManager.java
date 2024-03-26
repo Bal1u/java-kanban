@@ -1,5 +1,13 @@
+package Manager;
+
+import Classes.Task;
+import Classes.SubTask;
+import Classes.Epic;
+import Classes.Status;
+
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TaskManager {
     private static int nextId = 0;
@@ -50,25 +58,19 @@ public class TaskManager {
 
     public ArrayList<Task> getAllTasks() {
         ArrayList<Task> taskList = new ArrayList<>();
-        for (Task task : tasks.values()) {
-            taskList.add(task);
-        }
+        taskList.addAll(tasks.values());
         return taskList;
     }
 
     public ArrayList<SubTask> getAllSubTasks() {
         ArrayList<SubTask> subTaskList = new ArrayList<>();
-        for (SubTask subtask : subtasks.values()) {
-            subTaskList.add(subtask);
-        }
+        subTaskList.addAll(subtasks.values());
         return subTaskList;
     }
 
     public ArrayList<Epic> getAllEpic() {
         ArrayList<Epic> epicList = new ArrayList<>();
-        for (Epic epic : epics.values()) {
-            epicList.add(epic);
-        }
+        epicList.addAll(epics.values());
         return epicList;
     }
 
@@ -94,7 +96,7 @@ public class TaskManager {
     public Task getTaskById(int id) {
         Task task = tasks.get(id);
         if (task == null) {
-            return null;
+            return task;
         }
         return task;
     }
@@ -103,7 +105,7 @@ public class TaskManager {
     public Epic getEpicById(int id) {
         Epic epic = epics.get(id);
         if (epic == null) {
-            return null;
+            return epic;
         }
         return epic;
     }
@@ -112,7 +114,7 @@ public class TaskManager {
     public SubTask getSubTaskById(int id) {
         SubTask subTask = subtasks.get(id);
         if (subTask == null) {
-            return null;
+            return subTask;
         }
         return subTask;
     }
@@ -209,7 +211,7 @@ public class TaskManager {
     }
 
     public Status calculateStatus(Epic epic) {
-        ArrayList<Integer> subTaskList = epic.getSubTasks();
+        List<Integer> subTaskList = epic.getSubTasks();
         if (subTaskList.isEmpty()) {
             return Status.NEW;
         }
