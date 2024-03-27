@@ -1,6 +1,4 @@
-package Classes;
-
-import Classes.Status;
+package Tasks;
 
 public class SubTask extends Task {
 

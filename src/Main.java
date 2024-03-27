@@ -1,7 +1,7 @@
-import Classes.Epic;
-import Classes.Status;
-import Classes.SubTask;
-import Classes.Task;
+import Tasks.Epic;
+import Tasks.Status;
+import Tasks.SubTask;
+import Tasks.Task;
 import Manager.TaskManager;
 
 public class Main {

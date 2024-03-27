@@ -1,16 +1,16 @@
 package Manager;
 
-import Classes.Task;
-import Classes.SubTask;
-import Classes.Epic;
-import Classes.Status;
+import Tasks.Task;
+import Tasks.SubTask;
+import Tasks.Epic;
+import Tasks.Status;
 
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TaskManager {
-    private static int nextId = 0;
+    private int nextId = 0;
     protected HashMap<Integer, Task> tasks;
     protected HashMap<Integer, SubTask> subtasks;
     protected HashMap<Integer, Epic> epics;
